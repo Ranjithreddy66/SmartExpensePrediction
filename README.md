@@ -49,3 +49,7 @@ src/
 - Use a real-world dataset
 - Add a web interface
 - Improve forecasting accuracy
+
+## 👨‍💻 Author
+
+**Banala Ranjith Reddy**
