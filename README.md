@@ -50,6 +50,6 @@ src/
 - Add a web interface
 - Improve forecasting accuracy
 
-## 👨‍💻 Author
+##  Author
 
 **Banala Ranjith Reddy**
