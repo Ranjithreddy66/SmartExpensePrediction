@@ -4,29 +4,46 @@ import pandas as pd
 # Load trained model
 model = joblib.load("models/best_model.pkl")
 
-# Sample input
+print("=" * 50)
+print(" SMART EXPENSE PREDICTION USING MACHINE LEARNING ")
+print("=" * 50)
+
+# User Input
+user_id = int(input("Enter User ID: "))
+month = int(input("Enter Month: "))
+income = float(input("Enter Monthly Income: "))
+food = float(input("Enter Food Expense: "))
+travel = float(input("Enter Travel Expense: "))
+shopping = float(input("Enter Shopping Expense: "))
+bills = float(input("Enter Bills Expense: "))
+entertainment = float(input("Enter Entertainment Expense: "))
+healthcare = float(input("Enter Healthcare Expense: "))
+education = float(input("Enter Education Expense: "))
+others = float(input("Enter Others Expense: "))
+previous_expense = float(input("Enter Previous Month Expense: "))
+total_expense = float(input("Enter Total Expense: "))
+
+# Create DataFrame
 new_data = pd.DataFrame({
-
-    "UserID":[101],
-    "Month":[25],
-    "Income":[60000],
-    "Food":[7000],
-    "Travel":[2500],
-    "Shopping":[3000],
-    "Bills":[8500],
-    "Entertainment":[1800],
-    "Healthcare":[1200],
-    "Education":[2500],
-    "Others":[1000],
-    "PreviousExpense":[29000]
-
+    "UserID": [user_id],
+    "Month": [month],
+    "Income": [income],
+    "Food": [food],
+    "Travel": [travel],
+    "Shopping": [shopping],
+    "Bills": [bills],
+    "Entertainment": [entertainment],
+    "Healthcare": [healthcare],
+    "Education": [education],
+    "Others": [others],
+    "PreviousExpense": [previous_expense],
+    "TotalExpense": [total_expense]
 })
 
-# Prediction
+# Predict
 prediction = model.predict(new_data)
 
-print("="*40)
-print("Predicted Next Month Expense")
-print("="*40)
-
-print(f"₹ {prediction[0]:.2f}")
+print("\n" + "=" * 50)
+print("Prediction Result")
+print("=" * 50)
+print(f"Predicted Next Month Expense: ₹ {prediction[0]:.2f}")
